@@ -1,0 +1,20 @@
+{
+  "name": "coco-ugc-xcx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "http://git.test.cocosurprise.com/linke/coco-ugc-xcx.git",
+  "author": "林科 <linke@cocosurprise.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.6.0",
+    "gulp-watch": "^4.3.11",
+    "stylus": "^0.54.5",
+    "webpack": "^3.5.5"
+  },
+  "scripts": {
+    "start": "gulp"
+  }
+}

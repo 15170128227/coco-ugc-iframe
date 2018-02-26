@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "可可奇货",
+    "navigationBarTextStyle":"black"
+  },
+  "networkTimeout": {
+    "request": 30000
+  }
+}
