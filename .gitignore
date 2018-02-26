@@ -3,8 +3,8 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 .idea
-cocowx
-cocowx-dev/utils/test.js
-cocowx-dev/project.config.json
+dist
+src/utils/test.js
+src/project.config.json
 # My configurations:
 node_modules
