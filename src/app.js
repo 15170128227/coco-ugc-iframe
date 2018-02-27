@@ -1,13 +1,21 @@
-//app.js
-import {login, getUserInfo, getSetting} from './utils/wxchat'
-
+// app.js
+import {login, getUserInfo, getSetting} from './utils/wechat'
+import common from './utils/common'
+import { msg } from './utils/constants'
+import fetch from './utils/fetch'
 App({
-  onLaunch () {
+  globalData: {
+    userInfo: null
+  },
+  common, // 公共方法
+  fetch, // 接口请求方法
+  msg, // 接口提示语
+  imgBaseUrl: 'https://static.cocosurprise.com/images/mini-programs', // 图片服务器静态路径
+  onLaunch() {
     // 登录
     login().then(res => {
       console.log('login-code', res.code)
     })
-
     // 获取用户信息
     getSetting().then(res => {
       if (res.authSetting['scope.userInfo']) {
@@ -23,8 +31,5 @@ App({
         })
       }
     })
-  },
-  globalData: {
-    userInfo: null
   }
 })

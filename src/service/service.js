@@ -18,8 +18,18 @@ import Api from './api.js'
  * @params systemInfo Object WX系统信息
  * result data null
 */
-export const defaultLogin = ({code, systemInfo}) => post(Api.userApi, {code, systemInfo}) // path:'/us' 静默登录 
-export const updateUserInfo = userId => put(`${Api.userApi}/${userId}`) // path:'/us/:userId' 获取用户信息
-export const getUserInfo = userId => get(`${Api.userApi}/${userId}`) // path:'/us/:userId' 更新用户信息
-export const delUser = userId => del(`${Api.userApi}/${userId}`) // path:'/us/:userId' 更新用户信息
+export const defaultLogin = ({code, systemInfo}) => post(Api.userApi, {code, systemInfo}) // path:'/us/'
+/**
+ * 更新用户信息
+ * @params userId String|Number  必填 用户userId
+ * @params params Object  必填 需要更新的用户信息
+ * result data null
+*/
+export const updateUserInfo = (userId, params) => get(Api.userApi + userId, params) // path:'/us/:userId' 
+/**
+ * 获取用户信息
+ * @params userId String|Number  必填 用户userId
+ * result data Object 用户信息
+*/
+export const getUserInfo = userId => put(Api.userApi + userId) // path:'/us/:userId'
 

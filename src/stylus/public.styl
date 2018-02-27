@@ -1,15 +1,38 @@
-// base
+/************************************************************************    公共变量    ***********************************************************************/
 
-// font-size
-$font10 = 10px
-$font12 = 12px
-$font14 = 14px
-$font16 = 16px
-$font18 = 18px
-$font24 = 24px
-$font32 = 32px
-$font38 = 38px
-$font46 = 46px
+// font-size 字号
+$fs40 = 40rpx // 20px
+$fs36 = 36rpx // 18px
+$fs32 = 32rpx // 16px
+$fs30 = 30rpx // 15px
+$fs28 = 28rpx // 14px
+$fs24 = 24rpx // 12px
+$fs20 = 20rpx // 10px
 
-// color
+// color 颜色
 $dColor = red // 默认颜色
+
+
+/************************************************************************    公共方法    ***********************************************************************/
+/**
+ * 多行省略号
+ * $params rows 行数
+*/
+textOverflowEs(rows) 
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: rows
+  -webkit-box-orient: vertical
+
+// 单行省略号
+singleOverflows()
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+// 重置默认button样式
+restButton()
+  background-color: transparent
+  &:after 
+    border: 0

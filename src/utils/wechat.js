@@ -34,7 +34,6 @@ const Wechat = class Me {
         fail: reject
       })
     })
-    
   }
   /**
    * 存储数据 setStorage
@@ -83,15 +82,19 @@ const Wechat = class Me {
     return wx.getStorageSync(key)
   }
 
-  // 微信支付
-  pay({timeStamp, nonceStr, packages, signType, sign}) {
+  /**
+   * 支付
+   * @params {timeStamp, nonceStr, packages, signType, sign} 
+   *    timeStamp String  时间戳
+   *    nonceStr String  随机字符串
+   *    package String  订单唯一标识
+   *    signType String 
+   *    paySign String  
+  */
+  pay(params) {
     return new Promise((resolve, reject) => {
       wx.requestPayment({
-        timeStamp: timeStamp, // 时间戳
-        nonceStr: nonceStr, // 随机字符串
-        package: packages, // 订单惟一标识
-        signType: signType, // 
-        paySign: sign,
+        ...params,
         success: resolve,
         fail: reject
       })

@@ -1,13 +1,30 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
+<!--
+  css命名：
+  1. 无层级关系
+    header | aside | content | footer | banner 公共类样式
+  2.有层级关系 容器嵌套层级 私有类样式
+    header -> h-userinfo -> hu-avatar -> hu-nickname
+    header => h-
+    header-userinfo => hu-
+
+    b-img: banner-img // 基于banner下的公共样式
+    cb-img: content-banner-img // 基于content-banner-img私有样式
+    ...
+-->
+<view class="header">
+  <view class="h-userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image bindtap="bindViewTap" class="hu-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="hu-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+</view>
+<view class="aside"></view>
+<view class="content">
+  <view class="banner">
+    <image bindtap="bindViewTap" class="b-img cb-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
   </view>
 </view>
+<view class="footer"></view>
