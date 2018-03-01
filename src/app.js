@@ -5,7 +5,8 @@ import { msg } from './utils/constants'
 import fetch from './utils/fetch'
 App({
   globalData: {
-    userInfo: null
+    userInfo: null,
+
   },
   common, // 公共方法
   fetch, // 接口请求方法
@@ -31,5 +32,7 @@ App({
         })
       }
     })
-  }
+  },
+
+  
 })

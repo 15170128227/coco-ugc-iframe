@@ -1,5 +1,5 @@
 // service.js
-import {get, post, put, del} from './fetch'
+import {get, post, put, del} from '../utils/fetch'
 import Api from './api.js'
 
 /* 

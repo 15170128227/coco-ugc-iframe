@@ -1,0 +1,18 @@
+<!-- WebSocket -->
+
+<view class="socket">
+  <view class="s-chat">
+    <block wx:for="{{chatList}}" wx:key="index">
+      <view class="sc-row {{item.role === 2 ? 'posRight' : ''}}">
+        <text class="scr-name">{{item.role === 2 ? ':' : ''}}{{item.name}}{{item.role === 1 ? ':' : ''}}</text>
+        <text class="scr-cont">{{item.cont}}</text>
+      </view>
+    </block>
+  </view>
+  
+  <view class="s-input">
+  <text>输入：</text>
+  <input type="text" bindinput="bindKeyInput" placeholder="输入同步到view中" value="{{inputValue}}"/>
+  <button type="default" size="defaultSize" bindtap="sendSocketMessage">发送</button>
+  </view>
+</view>
