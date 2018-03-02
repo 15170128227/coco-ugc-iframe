@@ -2,7 +2,9 @@
   "pages":[
     "pages/index/index",
     "demo/socket/socket",
-    "demo/imgUpload/imgUpload"
+    "demo/imgUpload/imgUpload",
+    "demo/scrollSelect/scrollSelect",
+    "demo/location/location"
   ],
   "window":{
     "backgroundTextStyle":"light",

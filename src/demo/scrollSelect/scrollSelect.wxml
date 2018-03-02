@@ -1,0 +1,28 @@
+<!-- 滚动选择器 slider -->
+
+<view class="section">
+  <view class="section__title">普通选择器--性别选择</view>
+  <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{sex}}">
+    <view class="picker">
+      性别：{{sex[index]}}
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      日期: {{date}}
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <view class="section__title">省市区选择器</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      地址：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>

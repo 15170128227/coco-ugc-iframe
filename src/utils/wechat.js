@@ -115,6 +115,42 @@ const Wechat = class Me {
       })
     })
   }
+
+  /**
+   * 微信内置地图查看位置 openLocation
+   * @params {string}  latitude:Float 纬度，范围为-90~90，负数表示南纬  longitude:Float 经度，范围为-180~180，负数表示西经  scale:INT 缩放比例，范围5~18，默认为18
+  */
+  openLocation({latitude = 0, longitude = 0, scale = 18}) {
+    return new Promise((resolve, reject) => {
+      wx.openLocation({
+        latitude: latitude,
+        longitude: longitude,
+        scale: scale,
+        success: resolve,
+        fail: reject
+      })
+    })
+  }
+
+  /**
+   * 打开地图选择位置 chooseLocation
+   * @params complete Function 选择位置结束后的回调函数（无论成功还是失败均会调用）
+   * success return： 
+   *   latitude float 纬度，浮点数，范围为-90~90，负数表示南纬
+   *   longitude float 经度，浮点数，范围为-180~180，负数表示西经
+   *   address String 详细地址
+   *   name String 位置名称
+  */
+  chooseLocation(complete) {
+    return new Promise((resolve, reject) => {
+      wx.chooseLocation({
+        success: resolve,
+        fail: reject,
+        complete
+      })
+    })
+  }
+  
   // 选择图片
   chooseImg({count = 1, sizeType = ['original', 'compressed'], sourceType = ['album', 'camera']}, complete) {
     return new Promise((resolve, reject) => {

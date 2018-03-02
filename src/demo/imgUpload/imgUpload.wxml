@@ -2,13 +2,13 @@
 
 <view class="upload">
   
-  <scroll-view class="u-previews" scroll-x="{{scrollX}}" style="width:100%;height:150rpx;">
+  <view class="u-previews" scroll-x="{{scrollX}}" style="width:100%;height:150rpx;" capture-bind:touchstart="containerStart" capture-bind:touchmove="containerMove" capture-bind:touchend="containerEnd">
     <block wx:for="{{imgList}}" wx:key="{{index}}">
       <view class="up-img" style="transform:translateX({{item.x}}px)" data-index="{{index}}" capture-bind:touchstart="touchstart" capture-bind:touchmove="touchmove" capture-bind:touchend="touchend">
         <image src="{{item.path}}" />
       </view>
     </block>
-  </scroll-view>
+  </view>
   <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
     <view id="green" class="scroll-view-item_H bc_green"></view>
     <view id="red"  class="scroll-view-item_H bc_red"></view>

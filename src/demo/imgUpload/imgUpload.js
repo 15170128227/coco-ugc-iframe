@@ -36,7 +36,19 @@ Page({
   publish() {
     uploadImgs({url: 'http:localhost:8080'}, {path: this.data.imgList}) // 图片上传（单张|多张）
   },
+  containerStart(e) {
+    console.log('e.containerStart')
+  
+  },
+  containerMove(e) {
+    
+  },
+  containerEnd(e) {
+    // console.log('e11', e)
+  },
   touchstart(e) {
+    console.log('e.touchstart')
+    
     const touches = e.touches[0]
     const curIndex = e.currentTarget.dataset.index
     this.data.curImg = this.data.imgList.find((o, index) => curIndex === index)
